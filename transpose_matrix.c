@@ -17,6 +17,8 @@ int main()
             scanf("%d",&A[i][j]);
 
         }
+
+        printf("\n");
     }
 
     //for transpose matrix
@@ -36,7 +38,7 @@ int main()
     {
         for(j=0; j<col; j++)
         {
-            printf("%d\t",A[i][j]);
+            printf("%d ",A[i][j]);
 
         }
 
@@ -49,7 +51,7 @@ int main()
     {
         for(j=0; j<row; j++)
         {
-            printf("%d\t",transpose[i][j]);
+            printf("%d ",transpose[i][j]);
 
         }
         printf("\n");
