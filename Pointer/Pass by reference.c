@@ -7,7 +7,7 @@ void modify(int *num)
     *num = 20 ;
 }                         
                      //pass by reference
-                     //value not change 
+                     //value change 
 
 int main()
 {
