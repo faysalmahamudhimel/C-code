@@ -1,27 +1,25 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main ()
-{
-    /*Number is palindrome or not */
+int main() {
+    int num, original, reverse = 0, digit;
 
-    int temp,number,sum=0,remainder;
-    printf("Enter Number: ");
-    scanf("%d",&number);
+    printf("Enter a number: ");
+    scanf("%d", &num);
 
-    temp=number;
-    while(temp!=0)
-    {
-        remainder=temp%10;
-        sum=sum*10+remainder;
-        temp= temp / 10;
+    original = num;  // original number save করা
+
+    // number reverse করা
+    while(num != 0) {
+        digit = num % 10;        // last digit
+        reverse = reverse * 10 + digit; //number reverse
+        num = num / 10;          // last digit remove
     }
-    if(number == sum)
-    {
-        printf("Palindrome Number");
-    }
+
+    // compare
+    if(reverse == original)
+        printf("%d is a palindrome\n", original);
     else
-    {
-        printf("Not a Palindrome Number");
-    }
+        printf("%d is not a palindrome\n", original);
+
     return 0;
 }
