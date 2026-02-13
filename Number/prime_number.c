@@ -1,32 +1,32 @@
-#include<stdio.h>
-#include<math.h>
+#include <stdio.h>
 
-int main()
-{
-    int num,i,count=0;
-    printf("Enter the positive Number: ");
-    scanf("%d",&num);
+int main() {
 
-    if(num<=1)
-    {
-        count=1;
+    int n, i;
+
+    // User এর কাছ থেকে সংখ্যা নেওয়া
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    // 0 এবং 1 prime না
+    if (n <= 1) {
+        printf("Not Prime");
     }
-    for(i=2;i<sqrt(num);i++)
-    {
-        if(num%i==0)
-        {
-            count=1;
-            break;
+    else {
+
+        // 2 থেকে n-1 পর্যন্ত check করবো
+        for (i = 2; i < n; i++) {
+
+            // যদি n পুরোপুরি ভাগ যায়
+            if (n % i == 0) {
+                printf("Not Prime");   // তাহলে prime না
+                return 0;              // প্রোগ্রাম এখানেই শেষ
+            }
         }
-    }
-    
-    if(count==0)
-    {
-        printf("The number %d is a prime Number",num);
 
+        // যদি loop শেষ হয় কিন্তু একবারও ভাগ না যায়
+        printf("Prime");
     }
-    else{
-         printf("The Number %d is not a Prime number",num);
-    }
+
     return 0;
 }
